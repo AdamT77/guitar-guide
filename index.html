@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fretboard — Learn Guitar Theory</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/metronome.css" />
+  <link rel="stylesheet" href="css/course.css" />
+  <link rel="stylesheet" href="css/tools.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+  <div id="app">
+    <nav class="nav" id="nav"></nav>
+    <div class="fret-strip" id="fretStrip"></div>
+    <main class="content-area" id="view"></main>
+    <nav class="bottom-nav" id="bottomNav"></nav>
+  </div>
+
+  <!-- Data -->
+  <script src="js/logic/music.js"></script>
+  <script src="js/data/chords.js"></script>
+  <script src="js/data/scales.js"></script>
+  <script src="js/data/theory.js"></script>
+  <script src="js/data/lessons.js"></script>
+
+  <!-- Logic -->
+  <script src="js/logic/metronome.js"></script>
+  <script src="js/logic/progress.js"></script>
+
+  <!-- UI -->
+  <script src="js/ui/diagrams.js"></script>
+  <script src="js/ui/nav.js"></script>
+  <script src="js/ui/course.js"></script>
+  <script src="js/ui/tools.js"></script>
+  <script src="js/ui/profile.js"></script>
+
+  <!-- Entry -->
+  <script src="main.js"></script>
+</body>
+</html>

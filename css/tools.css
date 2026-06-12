@@ -1,0 +1,191 @@
+/* ============================================================
+   tools.css — chord viewer, scale viewer, circle of fifths
+   ============================================================ */
+
+.tools {
+  padding: 32px;
+}
+.tools__head {
+  margin-bottom: 24px;
+}
+.tools__head h1 {
+  font-family: var(--display);
+  font-size: 32px;
+  letter-spacing: 0.02em;
+}
+.tools__head p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.tools__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.tool-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.tool-card__title {
+  font-family: var(--display);
+  font-size: 24px;
+  letter-spacing: 0.03em;
+  color: var(--amber);
+  margin-bottom: 16px;
+}
+.tool-card__controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.tool-card__controls .select {
+  flex: 1;
+  min-width: 0;
+}
+
+.tool-card__stage {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 16px;
+}
+.tool-card__stage svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.note-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.formula {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  color: var(--cream);
+  text-align: center;
+  margin: 4px 0 14px;
+}
+.formula-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+/* Circle of fifths info panel */
+.cof-info {
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  padding-top: 16px;
+}
+.cof-info__key {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.cof-info__key h4 {
+  font-family: var(--display);
+  font-size: 28px;
+  letter-spacing: 0.03em;
+  color: var(--cream);
+}
+.cof-info__sig {
+  font-size: 13px;
+  color: var(--muted);
+}
+.cof-info__chords-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.cof-chords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cof-chord {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 40px;
+  padding: 6px 8px;
+  background: var(--elevated);
+  border-radius: 6px;
+}
+.cof-chord__num {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.cof-chord__name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cream);
+}
+
+/* Circle of fifths SVG interactions */
+.cof-seg {
+  cursor: pointer;
+  transition: fill 150ms ease;
+}
+.cof-seg__bg {
+  fill: var(--elevated);
+  stroke: var(--bg);
+  stroke-width: 1.5;
+  transition: fill 150ms ease;
+}
+.cof-seg:hover .cof-seg__bg {
+  fill: #2f2f2f;
+}
+.cof-seg.is-sel .cof-seg__bg {
+  fill: var(--amber);
+}
+.cof-seg__txt {
+  fill: var(--cream);
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+.cof-seg.is-sel .cof-seg__txt {
+  fill: #111;
+}
+.cof-seg__txt.minor {
+  font-size: 11px;
+  fill: var(--muted);
+}
+.cof-seg.is-sel .cof-seg__txt.minor {
+  fill: #1a1a1a;
+}
+
+@media (max-width: 1024px) {
+  .tools__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .tools {
+    padding: 24px 20px;
+  }
+  .tools__grid {
+    grid-template-columns: 1fr;
+  }
+}

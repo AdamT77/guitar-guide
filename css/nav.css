@@ -1,0 +1,151 @@
+/* ============================================================
+   nav.css — top navigation bar + bottom mobile nav
+   ============================================================ */
+
+.nav {
+  height: var(--nav-h);
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 24px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 40;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+
+.nav__logo {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--amber);
+}
+
+.nav__wordmark {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: var(--amber);
+}
+
+.nav__tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 auto;
+}
+
+.nav__tab {
+  position: relative;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cream);
+  letter-spacing: 0.01em;
+  transition: color 120ms ease;
+}
+.nav__tab:hover {
+  color: var(--amber);
+}
+.nav__tab::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 0;
+  height: 2px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transition: transform 140ms ease;
+}
+.nav__tab.is-active {
+  color: var(--amber);
+}
+.nav__tab.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav__right {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Metronome trigger icon button */
+.metro-trigger {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 22px;
+  position: relative;
+  transition: color 120ms ease, background 120ms ease;
+}
+.metro-trigger:hover {
+  color: var(--cream);
+  background: var(--card);
+}
+.metro-trigger.is-playing {
+  color: var(--amber);
+}
+.metro-trigger.beat {
+  opacity: 0.4;
+  transition: opacity 80ms ease;
+}
+
+/* Bottom nav (mobile only) */
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .nav__tabs {
+    display: none;
+  }
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    z-index: 50;
+  }
+  .bottom-nav__tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .bottom-nav__tab .ti {
+    font-size: 22px;
+  }
+  .bottom-nav__tab.is-active {
+    color: var(--amber);
+  }
+  .content-area {
+    padding-bottom: 60px;
+  }
+}
